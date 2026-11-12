@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://cgei5rrnrfcd7"]
+
+[ext_resource type="Script" uid="uid://cp1akwcdlykaa" path="res://src/gameplay/stage/intro/intro_stage.gd" id="1_jvsk5"]
+[ext_resource type="Texture2D" uid="uid://c6irrw1h76vdq" path="res://assets/PLACEHOLDER/Nature Landscapes Free Pixel Art/nature_3/origbig.png" id="2_feymu"]
+
+[node name="IntroStage" type="Node2D" unique_id=928021408]
+script = ExtResource("1_jvsk5")
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1524492949]
+scale = Vector2(0.5555555, 0.5555555)
+texture = ExtResource("2_feymu")
+centered = false
