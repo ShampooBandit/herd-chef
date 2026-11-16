@@ -1,0 +1,87 @@
+[gd_scene format=3 uid="uid://cmfa0y3esr1my"]
+
+[ext_resource type="Texture2D" uid="uid://befmiibjsmren" path="res://assets/PLACEHOLDER/oregon_trail_misc.png" id="1_e4jlp"]
+[ext_resource type="Script" uid="uid://cpqydot3alg1t" path="res://src/gui/travel_gui.gd" id="1_u1waw"]
+
+[node name="TravelInterface" type="Control" unique_id=5268600]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u1waw")
+
+[node name="WagonData" type="HBoxContainer" parent="." unique_id=1393040918]
+layout_mode = 0
+offset_right = 233.0
+offset_bottom = 40.0
+
+[node name="Wheel" type="Control" parent="WagonData" unique_id=1650301750]
+custom_minimum_size = Vector2(120, 60)
+layout_mode = 2
+
+[node name="WheelIcon" type="Sprite2D" parent="WagonData/Wheel" unique_id=867309905]
+position = Vector2(10, 13)
+scale = Vector2(2, 2)
+texture = ExtResource("1_e4jlp")
+centered = false
+region_enabled = true
+region_rect = Rect2(62, 19, 12, 10)
+
+[node name="WheelCondition" type="Label" parent="WagonData/Wheel" unique_id=1574451981]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -42.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 32
+text = "100%"
+
+[node name="Hull" type="Control" parent="WagonData" unique_id=1431062161]
+custom_minimum_size = Vector2(210, 60)
+layout_mode = 2
+
+[node name="HullIcon" type="Sprite2D" parent="WagonData/Hull" unique_id=866530915]
+position = Vector2(34, 7)
+scale = Vector2(2, 2)
+texture = ExtResource("1_e4jlp")
+centered = false
+region_enabled = true
+region_rect = Rect2(32, 2, 45, 17)
+
+[node name="HullCondition" type="Label" parent="WagonData/Hull" unique_id=1520076987]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -42.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 32
+text = "100%"
+
+[node name="Oxen" type="Control" parent="WagonData" unique_id=1783923704]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+
+[node name="OxenIcon" type="Sprite2D" parent="WagonData/Oxen" unique_id=1975945528]
+position = Vector2(36, 5)
+scale = Vector2(2, 2)
+texture = ExtResource("1_e4jlp")
+centered = false
+region_enabled = true
+region_rect = Rect2(1, 13, 28, 16)
+
+[node name="OxenCondition" type="Label" parent="WagonData/Oxen" unique_id=1679835547]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -42.0
+offset_bottom = 23.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 32
+text = "100%"

@@ -8,6 +8,8 @@ var move := false
 @onready var bg_layer3 : Parallax2D = $BackgroundLayers/ParallaxLayer3
 @onready var bg_layer4 : Parallax2D = $BackgroundLayers/ParallaxLayer4
 
+@onready var wagon : Wagon = $Wagon
+
 func init() -> void:
 	pass
 
@@ -29,5 +31,7 @@ func _process(_delta: float) -> void:
 
 		if move:
 			start_parallax()
+			wagon.anim_player.play()
 		else:
 			stop_parallax()
+			wagon.anim_player.pause()

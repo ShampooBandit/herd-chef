@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://bd6hbw00w08tb"]
+
+[ext_resource type="Script" uid="uid://bfvkta6w1k7gm" path="res://src/gameplay/player/wagon.gd" id="1_5ji8k"]
+[ext_resource type="Texture2D" uid="uid://befmiibjsmren" path="res://assets/PLACEHOLDER/oregon_trail_misc.png" id="1_q2vdw"]
+
+[sub_resource type="Animation" id="Animation_q2vdw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Rect2(0, 0, 77, 29)]
+}
+
+[sub_resource type="Animation" id="Animation_5ji8k"]
+resource_name = "idle"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Rect2(0, 0, 77, 29)]
+}
+
+[sub_resource type="Animation" id="Animation_xhmen"]
+resource_name = "move"
+length = 0.26666668
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.13333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Rect2(0, 0, 77, 29), Rect2(0, 29, 77, 28)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j0vsg"]
+_data = {
+&"RESET": SubResource("Animation_q2vdw"),
+&"idle": SubResource("Animation_5ji8k"),
+&"move": SubResource("Animation_xhmen")
+}
+
+[node name="Wagon" type="Node2D" unique_id=639996242]
+script = ExtResource("1_5ji8k")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1307658385]
+scale = Vector2(4, 4)
+texture = ExtResource("1_q2vdw")
+region_enabled = true
+region_rect = Rect2(0, 0, 77, 29)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2007635227]
+libraries/ = SubResource("AnimationLibrary_j0vsg")

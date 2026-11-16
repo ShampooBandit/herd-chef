@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://drhq2o5khy2i7"]
+
+[ext_resource type="Texture2D" uid="uid://blvtiumg1oexh" path="res://assets/PLACEHOLDER/street2.jpg" id="1_6r757"]
+
+[node name="TownStage" type="Node2D" unique_id=493253180]
+
+[node name="Background" type="Sprite2D" parent="." unique_id=1296287430]
+scale = Vector2(0.6666666, 0.6666667)
+texture = ExtResource("1_6r757")
+centered = false
