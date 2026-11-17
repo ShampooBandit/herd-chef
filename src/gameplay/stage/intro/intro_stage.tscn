@@ -7,6 +7,6 @@
 script = ExtResource("1_jvsk5")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1524492949]
-scale = Vector2(0.5555555, 0.5555555)
+scale = Vector2(0.83333355, 0.83333343)
 texture = ExtResource("2_feymu")
 centered = false

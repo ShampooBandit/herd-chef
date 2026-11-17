@@ -5,6 +5,6 @@
 [node name="CampingStage" type="Node2D" unique_id=490217113]
 
 [node name="Background" type="Sprite2D" parent="." unique_id=142620387]
-scale = Vector2(1.1459267, 1.1464969)
+scale = Vector2(1.71889, 1.7197452)
 texture = ExtResource("1_bf4x7")
 centered = false
