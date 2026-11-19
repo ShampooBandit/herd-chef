@@ -1,6 +1,8 @@
 class_name PartySheep
 extends BaseSheep
 
+const TRAVEL_SHEEP_SCENE_UID : String = "uid://d1lgxx201qkqe"
+
 var given_name : String = ""
 var description : String = ""
 
@@ -47,3 +49,18 @@ func _init() -> void:
 		func(): 
 			return -0.2
 	))
+
+func create_travel_avatar() -> TravelSheep:
+	var avatar_scene : PackedScene = ResourceLoader.load(TRAVEL_SHEEP_SCENE_UID)
+	if avatar_scene == null:
+		push_error("Could not load player scene: " + TRAVEL_SHEEP_SCENE_UID)
+		return null
+	
+	var avatar = avatar_scene.instantiate() as TravelSheep
+	if avatar == null:
+		push_error("Loaded travel avatar scene does not extend TravelSheep or DNE: " + TRAVEL_SHEEP_SCENE_UID)
+		return null
+	
+	# Initialize the avatar to this particular sheep's attributes here
+
+	return avatar

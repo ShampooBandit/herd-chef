@@ -85,7 +85,7 @@ func _deferred_load_stage(stage_scene_uid : String) -> void:
 		push_error("Loaded map is not of type Map or does not exist")
 		return
 	
-	_connect_signals(current_stage)
+	_connect_stage_signals(current_stage)
 	
 	stage_root.add_child(current_stage)
 	
@@ -115,7 +115,7 @@ func _deferred_load_gui(gui_scene_uid: String) -> void:
 	
 	await get_tree().process_frame
 
-func _connect_signals(stage_scene: BaseStage) -> void:
+func _connect_stage_signals(stage_scene: BaseStage) -> void:
 	if stage_scene is MainMenuStage:
 		current_stage.start_game.connect(start_new_game)
 

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cmfa0y3esr1my"]
 
-[ext_resource type="Texture2D" uid="uid://befmiibjsmren" path="res://assets/PLACEHOLDER/oregon_trail_misc.png" id="1_e4jlp"]
-[ext_resource type="Script" uid="uid://cpqydot3alg1t" path="res://src/gui/travel_gui.gd" id="1_u1waw"]
+[ext_resource type="Script" uid="uid://cpqydot3alg1t" path="res://src/gui/travel_gui.gd" id="1_kehuq"]
+[ext_resource type="Texture2D" uid="uid://befmiibjsmren" path="res://assets/PLACEHOLDER/oregon_trail_misc.png" id="2_drrdi"]
 
 [node name="TravelInterface" type="Control" unique_id=5268600]
 layout_mode = 3
@@ -10,7 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_u1waw")
+script = ExtResource("1_kehuq")
 
 [node name="WagonData" type="HBoxContainer" parent="." unique_id=1393040918]
 layout_mode = 0
@@ -24,7 +24,7 @@ layout_mode = 2
 [node name="WheelIcon" type="Sprite2D" parent="WagonData/Wheel" unique_id=867309905]
 position = Vector2(10, 13)
 scale = Vector2(2, 2)
-texture = ExtResource("1_e4jlp")
+texture = ExtResource("2_drrdi")
 centered = false
 region_enabled = true
 region_rect = Rect2(62, 19, 12, 10)
@@ -47,7 +47,7 @@ layout_mode = 2
 [node name="HullIcon" type="Sprite2D" parent="WagonData/Hull" unique_id=866530915]
 position = Vector2(34, 7)
 scale = Vector2(2, 2)
-texture = ExtResource("1_e4jlp")
+texture = ExtResource("2_drrdi")
 centered = false
 region_enabled = true
 region_rect = Rect2(32, 2, 45, 17)
@@ -70,7 +70,7 @@ layout_mode = 2
 [node name="OxenIcon" type="Sprite2D" parent="WagonData/Oxen" unique_id=1975945528]
 position = Vector2(36, 5)
 scale = Vector2(2, 2)
-texture = ExtResource("1_e4jlp")
+texture = ExtResource("2_drrdi")
 centered = false
 region_enabled = true
 region_rect = Rect2(1, 13, 28, 16)
@@ -85,3 +85,15 @@ offset_bottom = 23.0
 grow_horizontal = 0
 theme_override_font_sizes/font_size = 32
 text = "100%"
+
+[node name="Time" type="Label" parent="." unique_id=658068038]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 48
+text = "6:00 AM"
