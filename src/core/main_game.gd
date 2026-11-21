@@ -48,9 +48,18 @@ func _ready() -> void:
 	load_stage(MAIN_MENU_SCENE_UID)
 	_init_game()
 
+func _process(_delta: float) -> void:
+	match game_state:
+		GameState.TRAVEL:
+			gui_manager.update_travel_gui({
+				"time": stage_root.get_child(0).time
+			})
+
 func _init_game() -> void:
 	game_state = GameState.MAIN_MENU
 	transition_manager.anim_player = $TransitionLayer/TransitionPlayer
+	
+	gui_manager.gui_root = gui_root
 
 func _init_player() -> void:
 	var player_scene : PackedScene = ResourceLoader.load(PLAYER_SCENE_UID)
@@ -91,30 +100,6 @@ func _deferred_load_stage(stage_scene_uid : String) -> void:
 	
 	await get_tree().process_frame
 
-func load_gui(gui_scene : String) -> void:
-	_deferred_load_gui.call_deferred(gui_scene)
-
-func _deferred_load_gui(gui_scene_uid: String) -> void:
-	if current_gui != null:
-		current_gui.queue_free()
-		current_gui = null
-	
-	await get_tree().process_frame
-	
-	var new_gui_packed : PackedScene = ResourceLoader.load(gui_scene_uid, "PackedScene") as PackedScene
-	if new_gui_packed == null:
-		push_error("Could not load gui as a packed scene: " + gui_scene_uid)
-		return
-	
-	current_gui = new_gui_packed.instantiate() as BaseGUI
-	if current_gui == null:
-		push_error("Loaded gui is not of type BaseGUI or does not exist")
-		return
-	
-	gui_root.add_child(current_gui)
-	
-	await get_tree().process_frame
-
 func _connect_stage_signals(stage_scene: BaseStage) -> void:
 	if stage_scene is MainMenuStage:
 		current_stage.start_game.connect(start_new_game)
@@ -139,17 +124,17 @@ func end_intro() -> void:
 	transition_manager.screen_shown.disconnect(Dialogic.start.bind("intro"))
 	transition_manager.screen_hidden.connect(load_travel)
 	transition_manager.hide_screen("fade_out")
-	game_state = GameState.TRAVEL
 
 func load_travel() -> void:
 	transition_manager.screen_hidden.disconnect(load_travel)
 	
 	load_stage(TRAVEL_SCENE_UID)
-	load_gui(TRAVEL_GUI_SCENE_UID)
+	gui_manager.load_gui(TRAVEL_GUI_SCENE_UID)
 	init_travel()
 
 func init_travel() -> void:
 	transition_manager.show_screen("fade_in")
+	game_state = GameState.TRAVEL
 
 func end_travel() -> void:
 	transition_manager.screen_hidden.connect(load_town)

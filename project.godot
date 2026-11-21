@@ -64,7 +64,7 @@ audio/channel_defaults={
 "volume": 0.0
 }
 }
-layout/style_list=["res://styles/default_style.tres"]
+layout/style_list=["res://styles/default_style.tres", "res://styles/text_bubble_style.tres"]
 layout/default_style="res://styles/default_style.tres"
 
 [display]

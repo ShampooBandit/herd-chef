@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dappifpicgdlo"]
+
+[ext_resource type="Script" uid="uid://cfwf5d8exox4f" path="res://addons/dialogic/Modules/LayeredPortrait/custom_layered_portrait.gd" id="1_uubi5"]
+[ext_resource type="Texture2D" uid="uid://c1k8wnmjwp85i" path="res://assets/PLACEHOLDER/ruby.png" id="2_ib224"]
+
+[node name="LayeredPortrait" type="CanvasGroup" unique_id=1818393990]
+script = ExtResource("1_uubi5")
+
+[node name="Base" type="Sprite2D" parent="." unique_id=1658188415]
+texture = ExtResource("2_ib224")
+
+[node name="Eyes" type="Node2D" parent="." unique_id=1236341481]
+
+[node name="Open" type="Sprite2D" parent="Eyes" unique_id=1264023984]
+
+[node name="Closed" type="Sprite2D" parent="Eyes" unique_id=1478213015]
+visible = false

@@ -4,9 +4,11 @@ extends Node
 var gold : int = 1000
 var party : Dictionary = {}
 var cargo : Dictionary = {}
-var oxen : Array = []
+var oxen : bool = true
 var wagon : Wagon = null
-var travel_speed : int = 0
+var travel_speed : float = 0.0
+var travel_distance : float = 0.0
+var corruption : float = 0.0
 
 # Effects added from curses/profession/ability/etc will be appended/removed from these arrays
 # then referenced when events or other interactions happen that they would affect
@@ -37,8 +39,6 @@ var effects_on_party_eat : Array = []
 
 func _init() -> void:
 	wagon = Wagon.new()
-	oxen.append(Oxen.new())
-	oxen.append(Oxen.new())
 	
 	party["Brilliam"] = PartySheep.new()
 
